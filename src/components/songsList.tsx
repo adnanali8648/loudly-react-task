@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import useHttp from '../hooks/http';
-import { RequestMethod } from '../types';
+import { RequestMethod, Song } from '../types';
 import SongCard from './songCard';
 
 const SongsList: React.FC = () => {
@@ -15,7 +15,7 @@ const SongsList: React.FC = () => {
       <h1 className="font-bold text-5xl text-center text-white py-4">
         Songs list
       </h1>
-      {!isLoading && data && data.map((song: object, index: number) => (
+      {!isLoading && data && data.map((song: Song, index: number) => (
           <SongCard key={index} song={song} />
         ))}
     </>

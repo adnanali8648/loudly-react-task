@@ -1,8 +1,9 @@
 import React from 'react';
+import { Song } from '../../types';
 import { MediaPlayer, Card } from '../../UI';
 
 interface Props {
-  song: any;
+  song: Song;
 }
 const SongCard: React.FC<Props> = ({ song }) => {
   return (
