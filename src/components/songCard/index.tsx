@@ -1,6 +1,7 @@
 import React from 'react';
 import { Song } from '../../types';
-import { MediaPlayer, Card } from '../../UI';
+import { Card, MediaPlayer } from '../../UI';
+
 
 interface Props {
   song: Song;
