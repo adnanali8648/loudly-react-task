@@ -1,11 +1,14 @@
 import React from 'react';
 
-
-export const MediaPlayer: React.FC = () => {
+interface Props {
+  path: string;
+  type: string;
+}
+export const MediaPlayer: React.FC<Props> = ({ path, type }) => {
   return (
     <div className="pt-6 pb-3">
       <video controls data-name="media" className="w-full h-12">
-        <source src="" type="" />
+        <source src={path} type={type} />
       </video>
     </div>
   );
