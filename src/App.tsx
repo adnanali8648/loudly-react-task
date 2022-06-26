@@ -1,26 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import SongsList from './components/songsList';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="overflow-y-scroll scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 w-screen h-screen m-auto p-5 bg-cover bg-scroll bg-no-repeat bg-[url('https://cdn.pixabay.com/photo/2016/11/29/07/36/audience-1868137_1280.jpg')]">
+      <div className="container mx-auto max-w-4xl">
+        <SongsList />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
