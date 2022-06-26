@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
+import { PlaceHolder, ErrorCard } from '../UI';
 import useHttp from '../hooks/http';
-import { RequestMethod, Song } from '../types';
+import { Song } from '../types';
+import { RequestMethod } from '../types';
 import SongCard from './songCard';
 
 const SongsList: React.FC = () => {
@@ -9,15 +11,21 @@ const SongsList: React.FC = () => {
   useEffect(() => {
     sendRequest('/song/trending', RequestMethod.GET);
   }, [sendRequest]);
-
+console.log(data, 'data')
   return (
     <>
       <h1 className="font-bold text-5xl text-center text-white py-4">
         Songs list
       </h1>
-      {!isLoading && data && data.map((song: Song, index: number) => (
+      {isLoading ? (
+        <PlaceHolder />
+      ) : !error ? (
+        data?.map((song: Song, index: number) => (
           <SongCard key={index} song={song} />
-        ))}
+        ))
+      ) : (
+        <ErrorCard heading="Error" message={error} />
+      )}
     </>
   );
 };

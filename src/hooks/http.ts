@@ -58,7 +58,6 @@ const useHttp = () => {
           }
         })
         .then((responseData) => {
-          console.log(responseData);
           dispatchHttp({
             type: ActionType.RESPONSE,
             responseData: responseData,
