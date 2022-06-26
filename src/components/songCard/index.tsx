@@ -1,6 +1,6 @@
 import React from 'react';
 import { Song } from '../../types';
-import { Card, MediaPlayer } from '../../UI';
+import { Card, LikeMe, MediaPlayer } from '../../UI';
 
 
 interface Props {
@@ -22,6 +22,7 @@ const SongCard: React.FC<Props> = ({ song }) => {
             path={song.music_file_path}
             type={song.music_file_mimetype}
           />
+          <LikeMe songId={song.id}  />
         </div>
       </div>
     </Card>
