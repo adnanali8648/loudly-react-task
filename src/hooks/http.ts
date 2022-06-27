@@ -40,7 +40,6 @@ const useHttp = () => {
 
   const sendRequest = useCallback(
     (url: string, method: RequestMethod, body?: any) => {
-      console.log(body);
       dispatchHttp({ type: ActionType.SEND });
       fetch(url, {
         method: method,
@@ -65,7 +64,7 @@ const useHttp = () => {
         })
         .catch(() => {
           dispatchHttp({
-            type: ActionType.CLEAR,
+            type: ActionType.ERROR,
             errorMessage: "Something went wrong!",
           });
         });
