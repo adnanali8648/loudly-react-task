@@ -19,10 +19,12 @@ export const LikeMe: React.FC<Props> = ({ songId }) => {
   };
   return (
     <div
-      className={`flex items-center gap-2  hover:text-red-500 cursor-pointer ${
-        data && "text-green-500"
+      className={`flex items-center gap-2 select-none ${
+        data
+          ? "text-green-500 cursor-default"
+          : "cursor-pointer hover:text-red-500 "
       }`}
-      onClick={onClickHandler}
+      onClick={data ? () => 0 : onClickHandler}
     >
       <AiFillLike />
       <p>{data ? "liked" : "like"}</p>
